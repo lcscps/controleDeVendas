@@ -24,7 +24,7 @@ app.use((req,res,next) => {
     res.locals.error_msg = req.flash('error_msg')
     next()
 })
-// Handlebars
+// Handlebars 
 app.engine('handlebars', handlebars({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
 // BodyParser
@@ -34,7 +34,7 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, "public")))
 // Mongoose
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://192.168.0.30/controleDeVendas', {useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
+mongoose.connect('mongodb://192.168.0.21/controleDeVendas', {useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
     console.log('Servidor mongo ATIVO')
 })
 
