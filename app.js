@@ -7,6 +7,8 @@ const session = require('express-session')
 const path = require('path')
 const flash = require('connect-flash')
 const mongoose = require('mongoose')
+const produtos = require('./routes/produtos')
+const vendas = require('./routes/vendas')
 
 // Configurações
 // Session
@@ -40,6 +42,9 @@ mongoose.connect('mongodb://192.168.0.30/controleDeVendas', {useNewUrlParser: tr
 app.get('/', (req,res) => {
     res.render('index')
 })
+
+app.use('/produtos', produtos)
+app.use('/vendas', vendas)
 
 // Outras configurações
 const PORT = 3000
