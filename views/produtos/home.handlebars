@@ -1,1 +1,23 @@
-<h1>produtos</h1>
+    <h3>Lista de produtos</h3>
+    <a href="/produtos/add"><button class="btn btn-success">Novo</button></a>
+<br><br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Descricao</th>
+            <th scope="col">Preço de custo</th>
+            <th scope="col">Preço de venda</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each produto}}
+        <tr>
+            <th scope="row">{{@index}}</th>
+            <td>{{descricao}}</td>
+            <td>{{precoCusto}}</td>
+            <td>{{precoVenda}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

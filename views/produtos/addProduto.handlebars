@@ -1,15 +1,27 @@
 <div class="card">
     <div class="card-body">
         <h3>Cadastrar produto</h3>
-        <form action="" method="post">
+        <form action="/produtos/add" method="post">
             <label for="descricao">Descricao: </label>
-            <input type="text" class="form-control">
-            <label for="precoCusto">Preço de custo: </label>
-            <input type="text" class="form-control">
-            <label for="precoVenda">Preço de venda: </label>
-            <input type="text" class="form-control">
-            <label for="pesoOuMedida">Peso ou medida: </label>
-            <input type="text" class="form-control">
+            <input type="text" name="descricao" class="form-control">
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="precoCusto">Preço de custo: </label>
+                    <input type="text" name="precoCusto" class="form-control">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="precoVenda">Preço de venda: </label>
+                    <input type="text" name="precoVenda" class="form-control">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="pesoOuMedida">Peso ou medida: </label>
+                    <select name="pesoOuMedida" id="pesoOuMedida" class="form-control">
+                        <option value="kg">KG</option>
+                        <option value="un">UN</option>
+                    </select>
+                </div>
+            </div>
             <br>
             <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>
