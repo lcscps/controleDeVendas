@@ -8,6 +8,8 @@
             <th scope="col">Descricao</th>
             <th scope="col">Preço de custo</th>
             <th scope="col">Preço de venda</th>
+            <th scope="col">valor</th>
+            <th scope="col" colspan="2"></th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +19,9 @@
             <td>{{descricao}}</td>
             <td>{{precoCusto}}</td>
             <td>{{precoVenda}}</td>
+            <td>{{pesoOuMedida}}</td>
+            <td><a href="/produtos/edit/{{_id}}">Editar</a></td>
+            <td><a href="/produtos/delete/{{_id}}">Remover</a></td>
         </tr>
         {{/each}}
     </tbody>
