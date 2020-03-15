@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-body">
+        <h3>Editar produto</h3>
+        <form action="/vendas/editVenda" method="post">
+        <input type="hidden" name="id" value="{{venda._id}}">
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="quantidade">Quantidade: </label>
+                    <input type="text" name="quantidade" class="form-control" value="{{venda.quantidade}}">
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="data">Data: </label>
+                    <input type="text" name="data" class="form-control" value="{{venda.data}}">
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="produto">Produto: </label>
+                <select name="produto" class="form-control">
+                    {{#each produto}}
+                    <option value="{{_id}}">{{descricao}}</option>
+                    {{else}}
+                    <option value="0">Não existem produtos cadastrados</option>
+                    {{/each}}
+                </select>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success">Salvar</button>
+        </form>
+    </div>
+</div>
+<a href="/produtos">Voltar</a>

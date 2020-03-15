@@ -1,1 +1,26 @@
 <h1>vendas</h1>
+<a href="/vendas/add"><button class="btn btn-success">Nova</button></a>
+<br><br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Produto</th>
+            <th scope="col">Data da venda</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col" colspan="2"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each venda}}
+        <tr>
+            <th scope="row">{{@index}}</th>
+            <td>{{produto.descricao}}</td>
+            <td>{{data}}</td>
+            <td>{{quantidade}}</td>
+            <td><a href="/vendas/edit/{{_id}}">Editar</a></td>
+            <td><a href="/vendas/delete/{{_id}}">Remover</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-body">
+        <h3>Cadastrar venda</h3>
+        <form action="/vendas/add" method="post">
+            <label for="produto">produto: </label>
+            <select name="produto" class="form-control">
+                {{#each produto}}
+                <option value="{{_id}}">{{descricao}}</option>
+                {{else}}
+                <option value="0">Nenhum produto foi cadastrado</option>
+                {{/each}}
+            </select>
+            
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="data">Data: </label>
+                    <input type="text" name="data" class="form-control">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="quantidade">Quantidade: </label>
+                    <input type="text" name="quantidade" class="form-control">
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success">Cadastrar</button>
+        </form>
+    </div>
+</div>
+<a href="/vendas">Voltar</a>
